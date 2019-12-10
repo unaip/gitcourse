@@ -47,11 +47,12 @@ public class CalculadoraApp {
 
 		System.out.println(" El máximo de 1, 3, 4, 5, 6 es: " + miCalculadora.max(valores));
 		
-//		Arrays.stream(valores).max(Integer::compare);
+		System.out.println("El máximo es: " + Arrays.stream(valores).max().getAsInt());
 	}
 
 	private static void calcularMedia() {
 
+		
 		int min = 0, max = 100;
 		int[] valores = { 1, 3, 4, 5, 6, -999 };
 		// TODO: Pedir valores al usuario

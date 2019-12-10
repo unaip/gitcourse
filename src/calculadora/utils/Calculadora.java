@@ -1,5 +1,8 @@
 package calculadora.utils;
 
+import java.util.Arrays;
+import java.util.NoSuchElementException;
+
 public class Calculadora {
 
 	/**
@@ -49,6 +52,12 @@ public class Calculadora {
 
 	} // END MEDIA
 
+	/**
+	 * Método que calcula el máximo de un conjunto de valores. 
+	 * 
+	 * @param valores  array de numeros enteros.
+	 * @return Máximo número en el array de valores
+	 */
 	public int max(int[] valores) {
 
 		int i, max;
@@ -56,7 +65,7 @@ public class Calculadora {
 		if (valores.length == 0) {
 
 //			max = -1;
-			throw new IllegalArgumentException("Array vacío");
+			throw new NoSuchElementException("Array vacío");
 
 		} else {
 
@@ -68,7 +77,7 @@ public class Calculadora {
 				if (valores[i] > max) {
 					max = valores[i];
 				}
-				
+
 				i++;
 			}
 		}
@@ -76,4 +85,34 @@ public class Calculadora {
 		return max;
 
 	}
+
+	/**
+	 * Método que calcula el máximo de un conjunto de valores. 
+	 * 
+	 * @param valores  array de numeros enteros.
+	 * @return Máximo número en el array de valores
+	 * @throws NoSuchElementException Si la lista de valores está vacía
+	 */
+	public int maxWithStreams(int[] valores) {
+
+		return Arrays.stream(valores).max().getAsInt();
+
+	}
+
+	/**
+	 * Método que calcula la media de un conjunto de valores. Tiene en cuenta como
+	 * máximo los primeros 100 valores del array recibido como parámetro. Para
+	 * calcular la media, solo tiene en cuenta aquellos valores comprendidos entre
+	 * los limites minimo y maximo
+	 * 
+	 * @param valor  array de numeros enteros.
+	 * @param minimo Límite mínimo para que un valor sea considerado válido.
+	 * @param maximo Límite máximo para que un valor sea considerado válido.
+	 * @return
+	 */
+	public double mediaWithStreams(int[] valor, int minimo, int maximo) {
+	
+		return Arrays.stream(valor).limit(100).filter(x -> x >= minimo && x <= maximo).average().getAsDouble();
+
+	} // END MEDIA
 }

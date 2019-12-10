@@ -1,10 +1,11 @@
 Proyecto Java
+
 Ppal con main
 README.txt Proyecto realizado por...
 Git ignore. Ignorará todo excepto
 	README.txt
 	src
 Crear init + config para el proyecto
-Crear proyecto vacío en GitHub
+Crear repositorio vacío en GitHub
 Hacer el primer commit local
 Subir el proyecto al repositorio Github
