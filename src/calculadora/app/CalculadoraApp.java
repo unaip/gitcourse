@@ -1,5 +1,6 @@
 package calculadora.app;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 import calculadora.utils.Calculadora;
@@ -40,7 +41,13 @@ public class CalculadoraApp {
 
 	private static void calcularMax() {
 		// TODO Auto-generated method stub
+		int [] valores = { 1, 3, 4, 5, 6 };
+		// TODO: Pedir valores al usuario
+		Calculadora miCalculadora = new Calculadora();
 
+		System.out.println(" El máximo de 1, 3, 4, 5, 6 es: " + miCalculadora.max(valores));
+		
+//		Arrays.stream(valores).max(Integer::compare);
 	}
 
 	private static void calcularMedia() {
